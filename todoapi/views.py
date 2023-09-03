@@ -51,7 +51,7 @@ def update_view(request, pk):
         serializer.save()
     return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
 
-
+# viewsets
 @api_view(['DELETE'])
 def delete_view(request, pk):
     todo = Todo.objects.get(id=pk)
