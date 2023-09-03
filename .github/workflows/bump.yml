@@ -1,28 +1,26 @@
 name: Bump version
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Semver type of new version (major / minor / patch)'
-        required: true
-        type: choice
-        options: 
-        - patch
-        - minor
-        - major
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
 
 jobs:
-  bump-version:
-    runs-on: ubuntu-latest
-
+  build:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
     steps:
-    - name: Check out source
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         ssh-key: ${{ secrets.DEPLOY_KEY }}
+        fetch-depth: '0'
 
-    - name: bump version
-      run: npm version ${{ github.event.inputs.version }}
-
-    - name: Push latest version
-      run: git push origin main --follow-tags
+    - name: Bump version and push tag
+      uses: anothrNick/github-tag-action@1.64.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        WITH_V: true
+        PRERELEASE: true
