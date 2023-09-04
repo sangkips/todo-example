@@ -2,6 +2,7 @@ from django.db import models
 # Create your models here.
 
 # include new todos
+#your models here
 class Todo(models.Model):
     title = models.CharField(max_length=150)
     completed = models.BooleanField(blank=True, null=True, default=False)
