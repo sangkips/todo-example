@@ -8,29 +8,11 @@ on:
       - main
 
 jobs:
-  create-github-release:
-    name: Create GitHub Release
+  Release:
+    name: "Release"
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: marvinpinto/action-automatic-releases@latest
         with:
-          fetch-depth: 0
-      - name: Build changelog
-        id: build_changelog
-        uses: mikepenz/release-changelog-builder-action@main
-        with:
-          configuration: 'release-changelog-builder-config.json'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Create release
-        id: create_release
-        uses: actions/create-release@latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: ${{steps.build_changelog.outputs.changelog}}
-          draft: false
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: false
