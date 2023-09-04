@@ -2,7 +2,8 @@ name: Release
 
 on:
   push:
-
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+*'
     branches:
       - main
     paths-ignore:
@@ -13,24 +14,25 @@ jobs:
     name: Create GitHub Release
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
         with:
-          ref: release
-      - name: Generate Changelog
-        id: changelog
-        uses: TriPSs/conventional-changelog-action@v3
+          fetch-depth: 0
+      - name: Build changelog
+        id: build_changelog
+        uses: mikepenz/release-changelog-builder-action@main
         with:
-            git-message: 'chore(release): {version}'
-            release-count: 0
-
-      - name: create release
-        uses: actions/create-release@v1
-        if: ${{ steps.changelog.outputs.skipped == 'false'}}
+          configuration: 'release-changelog-builder-config.json'
         env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-            tag_name: ${{ steps.changelog.outputs.tag }}
-            release_name: ${{ steps.changelog.outputs.tag }}
-            body: ${{ steps.changelog.outputs.clean_changelog }}
-      
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: ${{steps.build_changelog.outputs.changelog}}
+          draft: false
+          prerelease: false
