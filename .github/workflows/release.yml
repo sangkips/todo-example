@@ -2,17 +2,24 @@ name: Release
 
 on:
   push:
-    tags:
-      - "v"
     branches:
       - main
 
 jobs:
   Release:
     name: Release
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
-      - uses: marvinpinto/action-automatic-releases@latest
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          prerelease: false
+          node-version: 18
+      - run: npm ci
+      - run: npm run build
+      - run: npx semantic-release
+        env:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
