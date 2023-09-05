@@ -21,14 +21,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Create Release
-        id: create_release
-        uses: actions/create-release@latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: marvinpinto/action-automatic-releases@latest
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: ${{steps.build_changelog.outputs.changelog}}
-          draft: false
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: false
     
