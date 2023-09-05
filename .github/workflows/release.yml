@@ -1,28 +1,24 @@
-name: Create Release
-on: 
-  workflow_dispatch
+name: Semantic Release
+
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  create-release:
+  release:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-    
-  create-github-release:
-    name: Create GitHub Release
-    runs-on: ubuntu-latest
-    needs: create-release
+    concurrency: release
     permissions:
+      id-token: write
       contents: write
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Create Release
-        uses: marvinpinto/action-automatic-releases@latest
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          prerelease: false
-    
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Python Semantic Release
+      uses: python-semantic-release/python-semantic-release@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
