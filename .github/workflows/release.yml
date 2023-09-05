@@ -1,58 +1,23 @@
-# name: Release
-
-# on:
-#   push:
-#     branches:
-#       - main
-
-# jobs:
-#   Release:
-#     name: Release
-#     permissions:
-#       contents: write
-#       issues: write
-#       pull-requests: write
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
-#       - uses: actions/setup-node@v2
-#         with:
-#           node-version: 18
-#       - run: npm ci
-#       - run: npm run build
-#       - run: npx semantic-release
-#         env:
-#           github_token: ${{ secrets.GITHUB_TOKEN }}
-
+name: Create Release
 on:
   push:
     branches:
       - main
-    tags:
-      - 'v*'
-
 
 jobs:
-  create_release:
+  create-release:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
         with:
-          python-version: 3.11
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Create Release
-        id: create_release
+          python-version: '3.11'
+      - name: Create release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag_name: v${{ github.event.release.tag_name }}
+          release_name: Release ${{ github.event.release.tag_name }}
+          body: |
+            ${{ github.event.release.body }}
