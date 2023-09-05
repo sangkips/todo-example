@@ -2,6 +2,16 @@
 
 
 
+## v0.2.0 (2023-09-05)
+
+### Feature
+
+* feat: remove comments
+
+BREAKING CHANGES:
+comments changed from &#34;new&#34; to &#34;null&#34; ([`4fc5c48`](https://github.com/sangkips/todo-example/commit/4fc5c4801d1fa15253dd952954513b17fdb24525))
+
+
 ## v0.1.0 (2023-09-05)
 
 ### Chore
