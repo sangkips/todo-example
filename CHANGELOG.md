@@ -2,6 +2,19 @@
 
 
 
+## v0.3.0 (2023-09-07)
+
+### Chore
+
+* chore: remove comments ([`bf74fc2`](https://github.com/sangkips/todo-example/commit/bf74fc25e8e2750fcea2c5dd20b2e3ae46e30610))
+
+* chore: do cleanups ([`4b4d0a5`](https://github.com/sangkips/todo-example/commit/4b4d0a56af613397fd5de29b8f17a631a4cf9603))
+
+### Feature
+
+* feat: remove comments ([`5ac9737`](https://github.com/sangkips/todo-example/commit/5ac9737ed0ffe79d2642b3457648d0946346d156))
+
+
 ## v0.2.0 (2023-09-05)
 
 ### Feature
