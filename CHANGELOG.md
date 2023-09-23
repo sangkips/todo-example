@@ -2,6 +2,13 @@
 
 
 
+## v0.4.3 (2023-09-23)
+
+### Fix
+
+* fix: update git url ([`88e58fc`](https://github.com/sangkips/todo-example/commit/88e58fcd638aa1f99c7f418943dbe73fc9f6b904))
+
+
 ## v0.4.2 (2023-09-23)
 
 ### Fix
