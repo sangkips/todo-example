@@ -2,6 +2,13 @@
 
 
 
+## v0.8.2 (2023-09-23)
+
+### Fix
+
+* fix: update service file ([`cb27519`](https://github.com/sangkips/todo-example/commit/cb27519c035680a487664fe8384ae239372d34f7))
+
+
 ## v0.8.1 (2023-09-23)
 
 ### Fix
