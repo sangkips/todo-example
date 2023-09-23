@@ -2,6 +2,17 @@
 
 
 
+## v0.4.0 (2023-09-23)
+
+### Chore
+
+* chore: update gitignore ([`d99ccfc`](https://github.com/sangkips/todo-example/commit/d99ccfc82551b447fafb981e8a8cf651a1250248))
+
+### Feature
+
+* feat: add jenkinsfile + dockerfile ([`4a7bbca`](https://github.com/sangkips/todo-example/commit/4a7bbcae4ffa3565253c2057fb9a40b8c550d7b7))
+
+
 ## v0.3.0 (2023-09-07)
 
 ### Chore
