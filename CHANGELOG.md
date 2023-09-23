@@ -2,6 +2,13 @@
 
 
 
+## v0.6.0 (2023-09-23)
+
+### Feature
+
+* feat: add k8s deployment file ([`385c298`](https://github.com/sangkips/todo-example/commit/385c29841fe64ce2c3d7563a96b91a9ae00b706d))
+
+
 ## v0.5.0 (2023-09-23)
 
 ### Chore
