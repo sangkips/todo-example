@@ -2,6 +2,13 @@
 
 
 
+## v0.7.0 (2023-09-23)
+
+### Feature
+
+* feat: add push deployment file to github stage ([`d920e7e`](https://github.com/sangkips/todo-example/commit/d920e7e9d419fa38939b7b52de189c65aa5bba49))
+
+
 ## v0.6.2 (2023-09-23)
 
 ### Fix
