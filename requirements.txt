@@ -3,3 +3,5 @@ Django==4.0.6
 sqlparse==0.4.2
 
 djangorestframework~=3.13.1
+
+# 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
