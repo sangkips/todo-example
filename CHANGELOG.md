@@ -2,6 +2,13 @@
 
 
 
+## v0.4.1 (2023-09-23)
+
+### Fix
+
+* fix: update app name ([`cbc0339`](https://github.com/sangkips/todo-example/commit/cbc03390a7cf198d539719f0d7946f6d91b5fb46))
+
+
 ## v0.4.0 (2023-09-23)
 
 ### Chore
