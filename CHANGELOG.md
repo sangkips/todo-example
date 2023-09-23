@@ -2,6 +2,13 @@
 
 
 
+## v0.6.1 (2023-09-23)
+
+### Fix
+
+* fix: add script to update k8s deployment ([`d195dd0`](https://github.com/sangkips/todo-example/commit/d195dd0bd84b3f7178b47b669b8a2630035a7f07))
+
+
 ## v0.6.0 (2023-09-23)
 
 ### Feature
