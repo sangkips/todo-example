@@ -2,6 +2,13 @@
 
 
 
+## v0.8.1 (2023-09-23)
+
+### Fix
+
+* fix: update service file ([`360db6b`](https://github.com/sangkips/todo-example/commit/360db6bc1cb03589c6cb463a657abb949c9b0ed4))
+
+
 ## v0.8.0 (2023-09-23)
 
 ### Chore
