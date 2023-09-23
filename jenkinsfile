@@ -46,11 +46,23 @@ pipeline{
             }
         }
 
-        stage('Delete Docker image') {
+        stage('Delete Docker Image') {
             steps {
                 script {
                     sh "docker rmi ${IMAGE_NAME}:${IMAGE_TAG}"
                     sh "docker rmi ${IMAGE_NAME}:latest"
+                }
+            }
+        }
+
+        stage('Update K8s Deployment') {
+            steps {
+                script {
+                    """
+                    cat deploymet.yaml
+                    sed -i 's/${APP_NAME}/.*/${APP_NAME}:${IMAGE_TAG}/g' deploymet.yaml
+                    cat deploymet.yaml
+                    """
                 }
             }
         }
