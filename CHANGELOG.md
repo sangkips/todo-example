@@ -2,6 +2,21 @@
 
 
 
+## v0.8.0 (2023-09-23)
+
+### Chore
+
+* chore: updated deployment.yaml ([`f679a96`](https://github.com/sangkips/todo-example/commit/f679a9697142598fdfcfb48a0bf2a82ab29f4148))
+
+* chore: updated deployment.yaml ([`3b36488`](https://github.com/sangkips/todo-example/commit/3b36488beb47f2eb2f05283d171e73a0c3071518))
+
+* chore: updated deployment.yaml ([`12d30ea`](https://github.com/sangkips/todo-example/commit/12d30ea73d69dacf5554e62f555ed725d9dda115))
+
+### Feature
+
+* feat: add k8s application file ([`3d6c5c1`](https://github.com/sangkips/todo-example/commit/3d6c5c13703784bc0aaab72e8218ac0867926ca5))
+
+
 ## v0.7.0 (2023-09-23)
 
 ### Feature
