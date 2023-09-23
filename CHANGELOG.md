@@ -2,6 +2,13 @@
 
 
 
+## v0.8.4 (2023-09-23)
+
+### Fix
+
+* fix: update service file ([`7c88849`](https://github.com/sangkips/todo-example/commit/7c8884926488fbdccb5ca25aa6670f40265d8c15))
+
+
 ## v0.8.3 (2023-09-23)
 
 ### Fix
