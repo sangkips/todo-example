@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment{
         DOCKERHUB_USERNAME = "sangkips"
-        APP_NAME = "todoapi"
+        APP_NAME = "todo"
         IMAGE_TAG = "${BUILD_NUMBER}"
         IMAGE_NAME = "${DOCKERHUB_USERNAME}" + "/" + "${APP_NAME}"
         REGISTRY_CREDS = "dockerhub"
@@ -20,7 +20,7 @@ pipeline{
             steps{
                 script{
                     git credentialsId: 'github',
-                    url: 'https://github.com/sangkips/todoapi.git',
+                    url: 'https://github.com/sangkips/todo-example.git',
                     branch: 'main'
                 }
             }
