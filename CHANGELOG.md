@@ -2,6 +2,17 @@
 
 
 
+## v0.5.0 (2023-09-23)
+
+### Chore
+
+* chore: remove indexed file ([`ea46c3f`](https://github.com/sangkips/todo-example/commit/ea46c3f9df6db36fb2613aaa1b90c1fdb037543c))
+
+### Feature
+
+* feat: add delete docker image ([`b501e2b`](https://github.com/sangkips/todo-example/commit/b501e2ba194a0c732b4b654637328283aae760cc))
+
+
 ## v0.4.3 (2023-09-23)
 
 ### Fix
