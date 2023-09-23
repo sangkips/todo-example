@@ -2,6 +2,13 @@
 
 
 
+## v0.4.2 (2023-09-23)
+
+### Fix
+
+* fix: update app name ([`bc62ea3`](https://github.com/sangkips/todo-example/commit/bc62ea38aa9821b879ea191b5ca21cc97c9687fc))
+
+
 ## v0.4.1 (2023-09-23)
 
 ### Fix
