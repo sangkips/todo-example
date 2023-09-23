@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: python-app-container
-        image: sangkips/todo:v1
+        image: sangkips/todo:27
         resources:
           limits:
             memory: "128Mi"
