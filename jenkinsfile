@@ -59,10 +59,25 @@ pipeline{
             steps {
                 script {
                     sh """
-                    cat deploymet.yaml
-                    sed -i 's/${APP_NAME}/.*/${APP_NAME}:${IMAGE_TAG}/g' deploymet.yaml
-                    cat deploymet.yaml
+                    cat deployment.yaml
+                    sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' deployment.yaml
+                    cat deployment.yaml
                     """
+                }
+            }
+        }
+        stage('Push Deployment file to github') {
+            steps {
+                script {
+                    sh """
+                    git config --global user.name "sangkips"
+                    git config --global user.email "sangkipkoech@gmail.com"
+                    git add deployment.yaml
+                    git commit -m "chore: updated deployment.yaml"
+                    """
+                    withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
+                    sh "git push https://github.com/sangkips/todo-example.git main"
+                    }
                 }
             }
         }
