@@ -2,6 +2,13 @@
 
 
 
+## v0.6.2 (2023-09-23)
+
+### Fix
+
+* fix: updated deployment.yaml ([`8248e63`](https://github.com/sangkips/todo-example/commit/8248e6300c41ff2d6cd9b64b652ede8b87627963))
+
+
 ## v0.6.1 (2023-09-23)
 
 ### Fix
